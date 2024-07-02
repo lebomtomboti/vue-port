@@ -1,26 +1,27 @@
 <template>
   <div id="app">
-    <Navbar />
-    <router-view />
-    <Footer />
+    <ResumePage />
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue';
-import Footer from './components/Footer.vue';
+import ResumePage from './components/ResumePage';
 
 export default {
   name: 'App',
   components: {
-    Navbar,
-    Footer
-  }
-}
+    ResumePage,
+  },
+};
 </script>
 
 <style>
-/* Your global styles here */
+#app {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+}
 </style>
+
+
 
 

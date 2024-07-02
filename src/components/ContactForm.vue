@@ -1,13 +1,13 @@
 <template>
     <div>
-      <h1>Projects Page</h1>
+      <h1>Contact</h1>
       <!-- Your home page content here -->
     </div>
   </template>
   
   <script>
   export default {
-    name: 'Projects'
+    name: 'ContactPage'
   }
   </script>
   
