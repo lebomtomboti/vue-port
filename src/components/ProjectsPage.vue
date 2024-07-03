@@ -1,16 +1,40 @@
 <template>
-    <div>
-      <h1>Projects Page</h1>
-      <!-- Your home page content here -->
+<div class="col ">
+        <h2 class="hea text-danger">My Projects</h2>
+        <div class="row  d-grid d-md-flex ">
+        <div class="proj border border-3 border-danger card bg-transparent   mt-4 mb-5" v-for="projects in Projects" :key="projects" id="ProjectCard">
+            <img :src="projects.image" class="card-img-top w-50 mx-auto mt-4  " alt="Pro">
+            <div class="card-body">
+                <h2 class="hea card-title  text-center text-danger">{{ projects.name }}</h2>
+                <h3 class="card-text  text-center text-white">{{ projects.description }}</h3>
+                <div class="card-body text-center ">
+                    <a :href="projects.gitHub" target="_blank"><button type="button"
+                            class="btn btn-danger m-4">GitHub</button></a>
+                    <a :href="projects.netlify" target="_blank"><button type="button"
+                            class="btn btn-danger">Vercel</button></a>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </template>
+</div>
+
+</template>
+
+<script>
+export default {
+    computed: {
+        Projects() {
+            return this.$store.state.projects
+        },
+
+    },
+    mounted() {
+        this.$store.dispatch("fetchProjects")
+
+    }
+
+}
+</script>
   
-  <script>
-  export default {
-    name: 'ProjectsPage'
-  }
-  </script>
-  
-  <style scoped>
-  /* Your component-specific styles here */
-  </style>
+<style></style>
