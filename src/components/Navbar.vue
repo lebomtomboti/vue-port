@@ -1,32 +1,17 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <router-link to="/home" class="nav-link">Home</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/about" class="nav-link">About</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/projects" class="nav-link">Projects</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/resume" class="nav-link">Resume</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/testimonials" class="nav-link">Testimonials</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/contact" class="nav-link">Contact</router-link>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <nav>
+    <a href="#" class="logo">Lebu</a>
+    <ul>
+      <li><a href ="" class="acive">Home</a></li>
+      <li><a href ="">About</a></li>
+      <li><a href ="">Resume</a></li>
+      <li><a href ="">Projects</a></li>
+      <li><a href ="">Testimonials</a></li>
+      <li><a href ="">Contact</a></li>
+    </ul>
   </nav>
-  
-  <div class="home">
+  <section class="home-content">
+    <div class="home">
       <div class="container">
         <div class="row vh-100 justify-content-center align-items-center">
       <div class="col-5">
@@ -38,6 +23,7 @@
         
          
           <div class="home-button">
+            <a class="nav-link mx-3" href="#projects"><button class="home-btn border-0 text-white py-2 px-5 fs-5">view Projects</button></a>
           </div>
         </div>
         <div class="social-icons">
@@ -54,65 +40,75 @@
     </div>
       </div>
     </div>
-  <footer>©LebuMtomboti</footer>
+   
+
+  </section>
 </template>
 
 <script>
 export default {
-  name: 'Navbar-nav'
-}
+  name: 'NavbarItem'
+};
 </script>
 
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  
+<style scoped>
+*{
+  margin:0;
+  padding:0;
 }
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: brown;
-}
-body{
+nav{
   background-color:black;
+  height:80px;
+  width:100%;
 }
-.typed{
-    color: brown;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-    animation: typing;
-    animation-duration: 1.5s;
-    animation-timing-function: steps(30, end);
-    animation-fill-mode: forwards;
+nav ul li {
+  display:inline-block;
+  line-height:80px;
+  margin: 0 5px;
 }
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  } 
-  .social-icons{
+
+nav ul{
+  float:right;
+  margin-right:55px;
+}
+nav ul li a{
+ font-size:18px;
+ color:white;
+ text-decoration:none;
+ font-weight: 500;
+ margin-right: 35px;
+}
+
+
+a:hover,a.active{
+  color:blue;
+}
+.logo{
+  font-size:25px;
+  color:white;
+  text-decoration:none;
+  font-weight:600px;
+  cursor:default;
+  display:inline-block;
+}
+.home-content{
+    background-image: linear-gradient(109deg, transparent 0%, transparent 5%,rgba(149, 149, 149,0.04) 5%, rgba(149, 149, 149,0.04) 38%,transparent 38%, transparent 100%),linear-gradient(324deg, transparent 0%, transparent 31%,rgba(149, 149, 149,0.04) 31%, rgba(149, 149, 149,0.04) 99%,transparent 99%, transparent 100%),linear-gradient(259deg, transparent 0%, transparent 11%,rgba(149, 149, 149,0.04) 11%, rgba(149, 149, 149,0.04) 57%,transparent 57%, transparent 100%),linear-gradient(221deg, transparent 0%, transparent 5%,rgba(149, 149, 149,0.04) 5%, rgba(149, 149, 149,0.04) 37%,transparent 37%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
+    background-position: center;
+    background-attachment: fixed;
+    height:100vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.social-icons{
     position: absolute;
     margin-left: -20%;
 }
-.card{
-    width: 50px;
-    height: 50%;
+
+.sep-link, .home-btn{
+    background-color: blue;
 }
 
 </style>
 
-  
+
+

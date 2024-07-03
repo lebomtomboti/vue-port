@@ -1,16 +1,24 @@
 <template>
-    <footer class="fixed-bottom p-3 text-center bg-light">
-      &copy; {{ new Date().getFullYear() }} Lebu's Portfolio
-    </footer>
-  </template>
-  
-  <script>
-  export default {
-    name: 'Footer-item'
+  <div class="container-fluid bg-transparent border-5 border-danger">
+      <div class="row">
+          <h2 class="mt-3 hea lead text-white "> Lebu`s Portfolio &copy;
+              <span> {{ currYear }}</span>
+          </h2>
+      </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "footerComp",
+  data() {
+      return {
+          currYear: new Date().getFullYear()
+      }
   }
-  </script>
-  
-  <style>
-  /* Your component-specific styles here */
-  </style>
+
+}
+</script>
+
+<style scoped></style>
   

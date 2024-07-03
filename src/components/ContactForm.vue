@@ -1,16 +1,13 @@
-<template>
-    <div>
-      <h1>Contact</h1>
-      <!-- Your home page content here -->
-    </div>
-  </template>
+<template lang="">
+  <div>
+    
+  </div>
+</template>
+<script>
+export default {
   
-  <script>
-  export default {
-    name: 'ContactPage'
-  }
-  </script>
+}
+</script>
+<style lang="">
   
-  <style scoped>
-  /* Your component-specific styles here */
-  </style>
+</style>
