@@ -3,11 +3,11 @@
     <a href="#" class="logo">Lebu</a>
     <ul>
       <li><a href ="" class="acive">Home</a></li>
-      <li><a href ="">About</a></li>
-      <li><a href ="">Resume</a></li>
-      <li><a href ="">Projects</a></li>
-      <li><a href ="">Testimonials</a></li>
-      <li><a href ="">Contact</a></li>
+      <li><a href ="/src/components/HomePage.vue">About</a></li>
+      <li><a href ="/src/components/ResumePage.vue">Resume</a></li>
+      <li><a href ="/src/components/ProjectsPage.vue">Projects</a></li>
+      <li><a href ="/src/components/TestimonialsPage.vue">Testimonials</a></li>
+      <li><a href ="/src/components/ContactForm.vue">Contact</a></li>
     </ul>
   </nav>
   <section class="home-content">

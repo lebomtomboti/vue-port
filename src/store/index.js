@@ -1,55 +1,93 @@
-import { createStore } from 'vuex'
-
+import { createStore } from "vuex";
+const dataUrl = "https://lebomtomboti.github.io/first-api/data/data.json";
 export default createStore({
-  //variables
   state: {
-    //data -> propertyName , null ->value
-    education:null,
-    about:null,
-    workingExperience:null,
-    projects:null,
-    skills:null,
-    testimonials:null,
+    jobTitle: null,
+    about: null,
+    education: null,
+    skills: null,
+    testimonials: null,
+    projects: null,
   },
-  getters: {
-  },
+  getters: {},
+
   mutations: {
-    //use this to change/update the state
-    setAboutMe(state,payload){
-     state.aboutMe = payload
-   },
-    setEducation(state,payload){
-      state.education = payload
-   },
-    setProjects(state,payload){
-      state.projects = payload
+    setJobTittle(state, value) {
+      state.jobTitle = value;
     },
-      setTestimonials(state,payload){
-        state.testimonials = payload
-      },
-        setWorkingExprience(state,payload){
-          state.workingExperience = payload
- },
-  setSkills(state,payload){
-   state.skills = payload
-  }
-},
+    setAbout(state, value) {
+      state.about = value;
+    },
+    setEducation(state, value) {
+      state.education = value;
+    },
+    setSkills(state, value) {
+      state.skills = value;
+    },
+    setTestimonials(state, value) {
+      state.testimonials = value;
+    },
+    setProjects(state, value) {
+      state.projects = value;
+    },
+  },
   actions: {
-    //run all the async code
-    //dispatching
-    async getAboutMe({commit}){
-      let fetchedInfo = await fetch('https://lebomtomboti.github.io/first-api/data/data.json')
-      let data = await fetchedInfo.json()
-      let {aboutMe,projects,education,skills,workingExperience,testimonials} = data
-      console.log(data);
-       commit('setAboutMe',aboutMe)
-      commit('setEducation',education)
-      commit('setSkills',skills)
-       commit('setWorkingExperience',workingExperience)
-      commit('setTestimonials',testimonials)
-     commit('setProjects',projects)
-   }
-},
-modules: {
-}
-})
+    async fetchJobTittle(context) {
+      try {
+        let res = await fetch(dataUrl);
+        let jobTittle = await res.json();
+        context.commit("setJobTittle", jobTittle.jobTitle[0].title);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async fetchAbout(context) {
+      try {
+        let res = await fetch(dataUrl);
+        let about = await res.json();
+        context.commit("setAbout", about.about);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async fetchEducation(context) {
+      try {
+        let res = await fetch(dataUrl);
+        let education = await res.json();
+        context.commit("setEducation", education.education);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async fetchSkills(context) {
+      try {
+        let res = await fetch(dataUrl);
+        let skills = await res.json();
+        context.commit("setSkills", skills.skills);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async fetchProjects(context) {
+      try {
+        let res = await fetch(dataUrl);
+        let projects = await res.json();
+        context.commit("setProjects", projects.projects);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async fetchTestimonials(context) {
+      try {
+        let res = await fetch(dataUrl);
+        let testimonials = await res.json();
+        context.commit("setTestimonials", testimonials.testimonials);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+  modules: {},
+});
+    
+
