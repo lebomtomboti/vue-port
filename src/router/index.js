@@ -7,18 +7,12 @@ import TestimonialsPage from '../components/TestimonialsPage.vue';
 import ContactForm from '../components/ContactForm.vue';
 
 const routes = [
-  { path: '/',
-     component: HomePage },
-  { path: '/about', 
-    component: AboutPage },
-  { path: '/projects', 
-    component: ProjectsPage },
-  { path: '/resume',
-     component: ResumePage },
-  { path: '/testimonials',
-     component: TestimonialsPage },
-  { path: '/contact', 
-    component: ContactForm }
+  { path: '/',component: HomePage },
+  { path: '/about',component: AboutPage },
+  { path: '/projects',component: ProjectsPage },
+  { path: '/resume',component: ResumePage },
+  { path: '/testimonials',component: TestimonialsPage },
+  { path: '/contact',component: ContactForm }
 ];
 
 const router = createRouter({

@@ -1,26 +1,23 @@
 <template>
   <div id="app">
-    <Navbar />
-    <Footer />
+    <ResumePage />
   </div>
 </template>
 
 <script>
-import Footer from './components/Footer.vue';
-import Navbar from './components/Navbar.vue';
+import ResumePage from './components/ResumePage.vue'; 
 
 export default {
   components: {
-    Navbar,
-    Footer,
-  },
+    ResumePage
+  }
 };
-
 </script>
 
-  <style scoped>
+<style>
 
 </style>
+
 
 
 
