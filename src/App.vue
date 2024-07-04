@@ -1,26 +1,20 @@
 <template>
-  <div id="app">
-    <ResumePage />
+  <div>
+    <ContactForm />
   </div>
 </template>
 
 <script>
-import ResumePage from './components/ResumePage';
+import ContactForm from './components/ContactForm.vue';
+
 
 export default {
-  name: 'App',
   components: {
-    ResumePage,
-  },
+    ContactForm
+  }
 };
 </script>
 
-<style>
-#app {
-  font-family: 'Arial', sans-serif;
-  padding: 20px;
-}
-</style>
 
 
 
