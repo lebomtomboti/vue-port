@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <ResumePage />
+    <Testimonials />
   </div>
 </template>
 
 <script>
-import ResumePage from './components/ResumePage.vue'; 
+import Testimonials from './components/TestimonialsPage.vue'
 
 export default {
   components: {
-    ResumePage
+    Testimonials
   }
 };
 </script>
