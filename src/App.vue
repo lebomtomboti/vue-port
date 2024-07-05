@@ -18,14 +18,14 @@ import ContactForm from './components/ContactForm.vue';
 import ProjectsPage from './components/ProjectsPage.vue';
 import ResumePage from './components/ResumePage.vue';
 import TestimonialsPage from './components/TestimonialsPage.vue';
-import FooterComp from './components/FooterCopm.vue';
+import Footer from './components/FooterCopm.vue';
 import Spinner from './components/Spinner.vue';
 
 
 export default {
   components: {
     //eslint-disable-next-line vue/no-unused-components
-    AboutPage,Navbar,ContactForm,ProjectsPage,ResumePage,TestimonialsPage,FooterComp,Spinner,
+    AboutPage,Navbar,ContactForm,ProjectsPage,ResumePage,TestimonialsPage,Footer,Spinner,
   }
 };
 </script>
