@@ -18,7 +18,8 @@
     <div class="home-content">
       <h1>Hi, I'm Lebu</h1>
       <h3>Aspiring Web Developer</h3>
-        <a href="#" class="btn">View More</a>
+      <p>Am currently Studying at Life Choices Coding Academy doing Full Stack Web Development for a duration of 6 months</p>
+        <a href="#" class="btn">Hire Me</a>
       </div>
 
       <div class="home-img">
@@ -119,6 +120,13 @@ export default {
   opacity: 0;
   animation: slideLeft 1s ease forwards;
   animation-delay: 1s;
+}
+.home-content p {
+  font-size: 16px;
+  margin: 20px 0 40px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1.3s;
 }
 .btn{
   position: relative;
