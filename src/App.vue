@@ -24,7 +24,7 @@ import Spinner from './components/Spinner.vue';
 
 export default {
   components: {
-    // eslint-disable-next-line vue/no-unused-components
+    //eslint-disable-next-line vue/no-unused-components
     AboutPage,Navbar,ContactForm,ProjectsPage,ResumePage,TestimonialsPage,Footer,Spinner,
   }
 };

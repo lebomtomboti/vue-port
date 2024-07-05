@@ -1,14 +1,14 @@
 <template>
   <header class="header">
-  <a href="#" class="logo">Lebu</a>
-  <nav class="navbar">
-      <a href ="#" class="active">Home</a>
-      <a href ="/about">About</a>
-      <a href ="/resume">Resume</a>
-      <a href ="/projects">Projects</a>
-      <a href ="/testimonials">Testimonials</a>
-      <a href ="/contact">Contact</a>
-  </nav>
+    <router-link to="/" class="logo">Lebu</router-link>
+    <nav class="navbar">
+      <router-link to="/" class="nav-link" exact>Home</router-link>
+      <router-link to="/about" class="nav-link">About</router-link>
+      <router-link to="/resume" class="nav-link">Resume</router-link>
+      <router-link to="/projects" class="nav-link">Projects</router-link>
+      <router-link to="/testimonials" class="nav-link">Testimonials</router-link>
+      <router-link to="/contact" class="nav-link">Contact</router-link>
+    </nav>
   </header>
   <section class="home">
     <div class="home-sci">
@@ -91,10 +91,11 @@ export default {
   animation-delay: 1s;
 }
 .navbar a.active,
-.navbar a:hover{
-  background: linear-gradient(45deg,#f06,#3cf);
-  -webkit-text-fill-color: transparent;
+.navbar a:hover {
+  background: linear-gradient(45deg, #f06, #3cf);
   -webkit-background-clip: text;
+  background-clip: text; 
+  color: transparent
 }
 .home{
   width: 100%;
@@ -232,7 +233,6 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  background: yellowgreen;
   border-radius: 50%;
   display: flex;
   justify-content: center;

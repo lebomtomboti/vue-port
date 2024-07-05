@@ -1,7 +1,9 @@
 <template>
+  <div class="page-wrapper">
   <div class="about-me">
     <h2>About Me</h2>
     <div class="about-content" v-html="aboutMe"></div>
+  </div>
   </div>
 </template>
 
@@ -34,6 +36,9 @@ export default {
 </script>
 
 <style scoped>
+.page-wrapper {
+  background: #0c1022;
+}
 .about-me {
   max-width: 800px;
   margin: 0 auto;
@@ -43,6 +48,7 @@ export default {
 
 .about-content {
   background:white;
+  color: black;
   padding: 20px;
   border-radius: 8px;
   margin-top: 20px;
@@ -52,6 +58,7 @@ export default {
 
 .about-content p {
   margin-bottom: 10px; 
+
 }
 
 </style>

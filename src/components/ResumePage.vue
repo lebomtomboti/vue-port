@@ -101,6 +101,7 @@ export default {
 
 .section {
   margin-bottom: 30px;
+  
 }
 
 .section-title {
@@ -116,6 +117,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 50px; 
+
 }
 
 .card {
@@ -126,6 +128,7 @@ export default {
   padding: 20px;
   margin: 60px;
   width: 400px;
+ 
 }
 </style> 
 

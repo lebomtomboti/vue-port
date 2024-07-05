@@ -1,112 +1,160 @@
 <template>
-  <div class="contact-form">
-    <h2>Contact Me</h2>
-    <form @submit.prevent="submitForm">
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" v-model="formData.name" required>
+  <div>
+    <div class="page-wrapper">
+    <h1>Contact Me</h1>
+    <form class="cf" @submit.prevent="submitForm">
+      <div class="half left cf">
+        <input type="text" v-model="formData.name" placeholder="Name" id="input-name" required>
+        <input type="text" v-model="formData.last" placeholder="Last Name" id="input-Last Name" required>
+        <input type="text" v-model="formData.email" placeholder="email" id="input-email" required>
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" v-model="formData.email" required>
+      <div class="half right cf">
+        <textarea v-model="formData.message" placeholder="Message" id="input-message" required></textarea>
       </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" v-model="formData.phone">
-      </div>
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" v-model="formData.subject">
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" rows="5" v-model="formData.message" required></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit">Send Message</button>
-      </div>
+      <input type="submit" value="Submit" id="input-submit">
     </form>
+    <div class="social-icons">
+      <a href="#"><i class='bx bxl-github'></i></a>
+      <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+    </div>
   </div>
+</div>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
-  name: 'ContactForm',
-  data() {
-    return {
-      formData: {
+  setup() {
+    const formData = ref({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+
+    const submitForm = () => {
+      console.log('Form submitted:', formData.value);
+      formData.value = {
         name: '',
         email: '',
-        phone: '',
         subject: '',
         message: ''
-      }
+      };
     };
-  },
-  methods: {
-    submitForm() {
-      // Simulate form submission
-      console.log('Form submitted with data:', this.formData);
 
-      // Optionally, clear the form fields after submission
-      this.formData.name = '';
-      this.formData.email = '';
-      this.formData.phone = '';
-      this.formData.subject = '';
-      this.formData.message = '';
-    }
+    return {
+      formData,
+      submitForm
+    };
   }
 };
 </script>
 
 <style scoped>
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: brown;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.page-wrapper {
+  background:  #0c1022;
 }
 
-.contact-form h2 {
+html,
+body {
+  background: #f1f1f1;
+  font-family: 'Merriweather', sans-serif;
+  padding: 1em;
+}
+
+h1 {
   text-align: center;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid brown;
-  border-radius: 5px;
-}
-
-.form-group textarea {
-  resize: vertical;
-}
-
-.form-group button {
-  background-color: brown;
   color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 1);
 }
 
-.form-group button:hover {
-  background-color: black;
+form {
+  max-width: 600px;
+  text-align: center;
+  margin: 20px auto;
 }
+
+form input,
+form textarea {
+  border: 0;
+  outline: 0;
+  padding: 1em;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  font-family: 'Merriweather', sans-serif;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  resize: none;
+}
+
+form input:focus,
+form textarea:focus {
+  box-shadow: 0 0px 2px rgba(231, 76, 60, 1);
+}
+
+#input-submit {
+  color: white;
+  background: #e74c3c;
+  cursor: pointer;
+}
+
+#input-submit:hover {
+  box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+}
+
+textarea {
+  height: 126px;
+}
+
+.half {
+  float: left;
+  width: 48%;
+  margin-bottom: 1em;
+}
+
+.right {
+  width: 50%;
+}
+
+.left {
+  margin-right: 2%;
+}
+
+@media (max-width: 480px) {
+  .half {
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+  }
+}
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #f06;
+  font-size: 24px;
+  margin: 0 10px;
+}
+
 </style>
+

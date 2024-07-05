@@ -51,18 +51,6 @@ export default {
           "message": "Lebo is a remarkable team member known for her reliability and dedication. She consistently goes above and beyond to ensure tasks are completed on time and to a high standard. Her attention to detail and organized approach contribute greatly to our team's efficiency.",
           "image": "https://lebomtomboti.github.io/vue-pictures/image.png"
         },
-        {
-          "name": "Ntando",
-          "position": "Peer",
-          "message": "Lebo's proactive approach and dedication to our team's success make her an invaluable asset. It's a privilege to work alongside someone who consistently brings positivity and professionalism to every project.",
-          "image": "https://lebomtomboti.github.io/portPhotos/Mna.jpg"
-        },
-        {
-          "name": "Masoodah",
-          "position": "Peer",
-          "message": "She is an exceptional communicator, able to effectively convey complex ideas with clarity and precision. Her insightful contributions have been invaluable to our team's success. She is also a team player.",
-          "image": "https://lebomtomboti.github.io/portPhotos/20240422_121111.jpg"
-        }
       ];
       this.testimonials = testimonialsData;
     }
@@ -74,6 +62,8 @@ export default {
 .testimonials {
   text-align: center;
   margin: 2rem 0;
+  background-color: #0c1022;
+  color: white;
 }
 
 .testimonial-cards {
@@ -106,7 +96,7 @@ export default {
 }
 
 .card-subtitle {
-  color:black;
+  color:white;
   font-size: 1.3rem;
   margin-bottom: 1rem;
 }
