@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <h2 class="text-center mt-5 mb-4">Projects</h2>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
         <div class="col" v-for="(project, index) in projects" :key="index">
           <div class="card h-100">
             <img :src="project.image" class="card-img-top" alt="Project Image">

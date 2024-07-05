@@ -38,10 +38,11 @@ export default {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  
 }
 
 .about-content {
-  background-color:white;
+  background:white;
   padding: 20px;
   border-radius: 8px;
   margin-top: 20px;
@@ -52,5 +53,6 @@ export default {
 .about-content p {
   margin-bottom: 10px; 
 }
+
 </style>
 

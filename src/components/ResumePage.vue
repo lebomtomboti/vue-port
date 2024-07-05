@@ -95,7 +95,7 @@ export default {
 .resume-page {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background-color: black; 
+  background-color: #0c1022; 
   color: white; 
 }
 

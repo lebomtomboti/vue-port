@@ -1,47 +1,39 @@
 <template>
-  <nav>
-    <a href="#" class="logo">Lebu</a>
-    <ul>
-      <li><a href ="" class="acive">Home</a></li>
-      <li><a href ="/about">About</a></li>
-      <li><a href ="/resume">Resume</a></li>
-      <li><a href ="/projects">Projects</a></li>
-      <li><a href ="/testimonials">Testimonials</a></li>
-      <li><a href ="/contact">Contact</a></li>
-    </ul>
+  <header class="header">
+  <a href="#" class="logo">Lebu</a>
+  <nav class="navbar">
+      <a href ="#" class="active">Home</a>
+      <a href ="/about">About</a>
+      <a href ="/resume">Resume</a>
+      <a href ="/projects">Projects</a>
+      <a href ="/testimonials">Testimonials</a>
+      <a href ="/contact">Contact</a>
   </nav>
-  <section class="home-content">
-    <div class="home">
-      <div class="container">
-        <div class="row vh-100 justify-content-center align-items-center">
-      <div class="col-5">
-        <div class="clearfix">
-          <div class="home-header">
-            <h2 class="typed"><i class="bi bi-dash"></i> Hi I'm Lebo Mtomboti</h2>
-          </div>
-          <p class="home-con display-2">Aspiring full stack web developer</p>
-        
-         
-          <div class="home-button">
-            <a class="nav-link mx-3" href="#projects"><button class="home-btn border-0 text-white py-2 px-5 fs-5">view Projects</button></a>
-          </div>
-        </div>
-        <div class="social-icons">
-          <i class="bi bi-github fs-3"></i>
-          <i class="bi bi-linkedin fs-3"></i>
-        </div>
-
-      </div>
-      <div class="col-3">
-        <div id="image" class="container">
-          <img src="https://lebomtomboti.github.io/hostedimages/images/20240422_120346.jpg" alt="Lebo's-profile-image" width="250" class="img-fluid rounded" loading="lazy">
-        </div>
-      </div>
+  </header>
+  <section class="home">
+    <div class="home-sci">
+      <a href="#"><i class='bx bxl-github'></i></a>
+      <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
     </div>
+    <div class="home-content">
+      <h1>Hi, I'm Lebu</h1>
+      <h3>Aspiring Web Developer</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+        Vel adipisci, nisi dolore iusto maiores esse beatae. 
+        Illum cum velit ratione nam iure distinctio vel sint, 
+        ab voluptatum incidunt assumenda delectus.</p>
+        <a href="#" class="btn">Hire Me</a>
       </div>
-    </div>
-   
 
+      <div class="home-img">
+        <div class="glowing-circle">
+          <span></span>
+          <span></span>
+          <div class="image">
+            <img src="https://lebomtomboti.github.io/hostedimages/images/20240422_120346.jpg" alt="">
+          </div>
+        </div>
+      </div>
   </section>
 </template>
 
@@ -52,62 +44,304 @@ export default {
 </script>
 
 <style scoped>
+
+
+@import url('https://fontys.googleapis.com/css2?family=poppins:wght@300;400;500;600;700;800;900&display=swap');
 *{
-  margin:0;
+  margin: 0;
   padding:0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
 }
-nav{
-  background-color:black;
-  height:80px;
-  width:100%;
-}
-nav ul li {
-  display:inline-block;
-  line-height:80px;
-  margin: 0 5px;
+.home{
+  background: #0c1022;
+  color: white;
 }
 
-nav ul{
-  float:right;
-  margin-right:55px;
-}
-nav ul li a{
- font-size:18px;
- color:white;
- text-decoration:none;
- font-weight: 500;
- margin-right: 35px;
-}
-
-
-a:hover,a.active{
-  color:blue;
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
 .logo{
-  font-size:25px;
-  color:white;
-  text-decoration:none;
-  font-weight:600px;
-  cursor:default;
-  display:inline-block;
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  pointer-events: none;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
 }
-.home-content{
-    background-image: linear-gradient(109deg, transparent 0%, transparent 5%,rgba(149, 149, 149,0.04) 5%, rgba(149, 149, 149,0.04) 38%,transparent 38%, transparent 100%),linear-gradient(324deg, transparent 0%, transparent 31%,rgba(149, 149, 149,0.04) 31%, rgba(149, 149, 149,0.04) 99%,transparent 99%, transparent 100%),linear-gradient(259deg, transparent 0%, transparent 11%,rgba(149, 149, 149,0.04) 11%, rgba(149, 149, 149,0.04) 57%,transparent 57%, transparent 100%),linear-gradient(221deg, transparent 0%, transparent 5%,rgba(149, 149, 149,0.04) 5%, rgba(149, 149, 149,0.04) 37%,transparent 37%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
-    background-position: center;
-    background-attachment: fixed;
-    height:100vh;
-    background-repeat: no-repeat;
-    background-size:cover;
+.navbar a {
+  display: inline-block;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  opacity: 0;
+  animation: slideTop .5s ease forwards;
+  animation-delay: 1s;
 }
-.social-icons{
-    position: absolute;
-    margin-left: -20%;
+.navbar a.active,
+.navbar a:hover{
+  background: linear-gradient(45deg,#f06,#3cf);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.home{
+  width: 100%;
+  height:100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70px 10% 0;
+}
+.home-content {
+  max-width: 500px;
+  margin-left: -30px;
+}
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: .7s;
+}
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+}
+.home-content p {
+  font-size: 16px;
+  margin: 20px 0 40px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1.3s;
+}
+.btn{
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height:48px;
+  border-radius: 40px;
+  font-size: 19px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  z-index: 1;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1.8s;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  inset: 0;
+  background: linear-gradient(45deg,#f06,#3cf,#f06); 
+  background-position: 0 0;
+  background-size: 200%;
+  z-index: -1;
+  border-radius: 40px;
+  filter: blur(5px);
+  transition: .5s ease;
+}
+.btn:hover::before {
+  background-position: 100% 0;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  inset: 0;
+  background: linear-gradient(45deg,#f06,#3cf,#f06); 
+  background-position: 0 0;
+  background-size: 200%;
+  z-index: -1;
+  border-radius: 40px;
+  transition: .5s ease;
+}
+.btn:hover::after {
+  background-position: 100% 0;
+}
+.home-sci a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg,#f06,#3cf);
+  border-radius: 50%;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  margin: 20px 0;
+  z-index: 1;
+}
+.home-sci a:nth-child(1) {
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 2.1s;
+}
+.home-sci a:nth-child(2) {
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2.1s;
+}
+.home-sci ::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #0c1022;
+  border-radius: 50%;
+  transform: scale(.88);
+  z-index: -1;
+  transition: .5s ease;
+}
+.home-sci a:hover::after {
+  transform: scale(0);
+}
+.home-img{
+  width: 410px;
+  height: 410px;
+  opacity: 0;
+  animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+  animation-delay: 2.1s 3.1s;
 }
 
-.sep-link, .home-btn{
-    background-color: blue;
+.home-img .glowing-circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: yellowgreen;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.home-img .glowing-circle::after {
+  content: '';
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: #0c1022;
+  border-radius: 50%;
+}
+.glowing-circle span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#f06,#3cf);
+  border-radius: 50%;
+  animation: circleRotate 5s linear infinite;
+}
+.glowing-circle span:nth-child(1) {
+  filter: blur(10px);
+}
+.glowing-circle .image {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  z-index: 1;
+  overflow: hidden;
+}
+.image img{
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 350px;
+  object-fit: cover;
+}
+@keyframes slideTop {
+ 0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideRight {
+ 0% {
+    opacity: 0;
+    transform: translatex(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+@keyframes slideLeft {
+ 0% {
+    opacity: 0;
+    transform: translatex(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+@keyframes slideBottom {
+ 0% {
+    opacity: 0;
+    transform: translatex(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+@keyframes zoomIn {
+ 0% {
+    opacity: 0;
+    transform: scale(0)
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-24px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes circleRotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 </style>
 
 
