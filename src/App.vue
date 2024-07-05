@@ -18,7 +18,7 @@ import ContactForm from './components/ContactForm.vue';
 import ProjectsPage from './components/ProjectsPage.vue';
 import ResumePage from './components/ResumePage.vue';
 import TestimonialsPage from './components/TestimonialsPage.vue';
-import Footer from './components/FooterCopm.vue';
+import Footer from './components/FooterComp.vue';
 import Spinner from './components/Spinner.vue';
 
 
